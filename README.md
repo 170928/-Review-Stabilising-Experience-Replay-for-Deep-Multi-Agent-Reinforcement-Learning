@@ -21,3 +21,10 @@
 (2) Foerster et al., 2016  
 replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.  
 
+### [Details]
+(1) Replay memory에 있는 experience를 "off-environment data" 로써 해석합니다. (Ciosek & Whiteson, 2017)  
+(2) Replay memory의 각 튜플을 해당 튜플에서 joint action의 확률로 보완하면, 해당 시간에 사용중인 정책에 따라 튜플을 나중에 샘플링하여 training 할 때 important sampling 보정을 계산할 수 있습니다.  
+
+(3) Tesauro, 2003 "hyper Q-learning" 기법을 적용  
+다른 agent들의 behaviour에서 해당 agent들의 policy를 추론합니다.  
+
