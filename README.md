@@ -118,6 +118,19 @@ Q-function의 "non-stationary" 문제를 발생시키게 됩니다.
 
 그러나, 이때 새롭게 발생하는 문제는 other agent들이 자신의 Q-function을 neural network로써 근사시키고 있다면, 이를 추측하기 위한 neural network도 커져야 한다는 것입니다.   
 
+그래서, "experinece replay" 방법을 안정화시키기 위해 각 agent들은 가능한 θ-a에서 조건을 지정할 필요가 없지만 "replay memory"에서 실제로 발생하는 θ-a의 값만 조정할 수 있다는 것이 중요한 방법 요소입니다.
+"replay buffer"에서 데이터를 생성 한 정책 순서는 high dimensional policy space를 통해 단일 차원 trajectory를 따르는 것으로 생각할 수 있습니다.
+"experinece replay" 을 안정화시키기 위해서는 각 agent들의 observation이 trajectory를 따라 현재 training 을 위한 sample이 어디서 발생했는지를 충분히 구별가능하게 해야합니다.  
+
+이러한 정보를 포함할 수 있는 "low-dimensional fingerprint"로써 "iteration number e"가 좋은 대상입니다.  
+그 뿐만 아니라, exploration rate epsilon을 포함하여 observation function을 다음과 같이 변환 시키는 것으로 "experience replay"를 효과적으로 수행 할 수 있게 해줍니다.  
+
+![image](https://user-images.githubusercontent.com/40893452/45862620-81d4d100-bdad-11e8-8a26-9148c6f04d31.png)
+![image](https://user-images.githubusercontent.com/40893452/45862611-77b2d280-bdad-11e8-8520-0a5129c4711a.png)
+
+
+
+
 
 
 
