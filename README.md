@@ -93,6 +93,31 @@ Bellman optimality equation을 다음과 같이 사용할 수 있습니다.
 위의 Bellman equation을 통해서, partially-observable case에서도 non-stationary term ![image](https://user-images.githubusercontent.com/40893452/45859281-6ca37680-bd9c-11e8-9919-fe146faafa1f.png)에 Bellman equation이 의존한다는 것을 알 수 있습니다.  
 
 ## [Multi-Agent Fingerprints]
+importance sampling 기법은 true objective를 위해 "unbiased estimate"를 할 수 있게 해줍니다.  
+그러나, 빈번하게 크고 (large) 경계 없는 (unbounded) variance를 만들어 냅니다.  
+이를 해결하기 위해서, "truncating 혹은 adjust" 기법들이 연구되어 variance를 줄이는 데는 성공했지만 "bias"를 만들어 내는 현상이 있습니다.  
+
+그러므로, 이 논문에서는 이 자체를 고치기 보다, multi-agent 의 non-stationary 문제를 포용할 수 있는 기법으로의 변형을 제시합니다.  
+
+우선, 이 논문의 베이스가 되는 IQL 에 대해서 다시 살펴보겟습니다.  
+Independent Q-Learning 기법의 약점은 other agent들을 환경 (environment)의 일부로 보는 것입니다.  
+이로 인해서, 시간에 따라 변화 하는 other agent들의 policy들이 환경으로 여겨지기 때문에  
+Q-function의 "non-stationary" 문제를 발생시키게 됩니다.  
+
+즉, 다른 agent에게 environment로써 영향을 준다면 Q-function이 "stationary" 해야한다는 것을 의미합니다.  
+> hyper-Q-Learning (Tesauro, 2003) 에서 방법을 제시하기도 했습니다.  
+
+각각의 agent들의 state space는 "Bayesian inference"를 통해서 계산되어지고 추측되어 agent의 state space로 들어갑니다.  
+직관적으로, 이 방법을 통해서 각각의 agent들의 학습을 standard single agent 문제로 간단하게 변화시키지만  
+훨씬 더 큰 space 공간의 계산을 필요로 하게 됩니다.  
+
+그러므로, hyper-Q-learning의 실질적인 어려움은 Q-function의 차원을 증가시킨다는 점입니다.  
+이로인해 학습시에 하드웨어의 제약에 따라 어려움이 발생합니다.  
+이 문제는 "deep learning" 기법을 통해서 가속화되고 있으며, 다른 agent들의 정책들도 high dimensional deep neural entwork들로 구성 됩니다.  
+> 즉 다른 agent의 Q-function을 근사하는 neural network를 가지고 있다는 것입니다.  
+
+그러나, 이때 새롭게 발생하는 문제는 other agent들이 자신의 Q-function을 neural network로써 근사시키고 있다면, 이를 추측하기 위한 neural network도 커져야 한다는 것입니다.   
+
 
 
 
