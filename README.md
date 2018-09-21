@@ -128,6 +128,16 @@ Q-function의 "non-stationary" 문제를 발생시키게 됩니다.
 ![image](https://user-images.githubusercontent.com/40893452/45862620-81d4d100-bdad-11e8-8a26-9148c6f04d31.png)
 ![image](https://user-images.githubusercontent.com/40893452/45862611-77b2d280-bdad-11e8-8520-0a5129c4711a.png)
 
+## [Experiments]
+이 논문의 실험에서는 다음과 같은 3가지 종류의 실험 모델을 사용합니다.  
+(1) XP + FP : experience replay with Finger Print Model  
+(2) XP + IS : experience replay with Importance Sampling Model  
+(3) XP + IS + FP : exrperience replay with finger print & importance sampling Model  
+
+Q-learning의 모델은 (Foerster et al. 2016)에서 사용된 RNN model을 사용하였습니다.  
+그러나 위의 모델에서 communication을 하는 모델 부분은 제거하였습니다.  
+> 이 논문은 decentralized q-learning이기 떄문..!!
+> 자세한 사용 구조는 위의 논문을 참조하세요.  
 
 
 
