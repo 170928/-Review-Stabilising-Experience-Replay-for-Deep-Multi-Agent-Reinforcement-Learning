@@ -49,6 +49,27 @@ replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.
 ### [Multi-Agent Important Sampling]
 이 논문에서는 multi agent setting을 위해서 "importance sampling"을 이용합니다.  
 
+[Case 1]  
+1. fully-observable multi-agent setting.  
+2. other agent들의 policy를 모두 알 수 있다고 가정하는 경우.  
+
+Bellman optimality equation을 다음과 같이 사용할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/40893452/45858330-e422d700-bd97-11e8-84b6-db423fccd0b9.png)  
+
+위의 식에서 "non-stationary"의 문제가 있는 부분은 다음과 같습니다.   
+![image](https://user-images.githubusercontent.com/40893452/45858423-47ad0480-bd98-11e8-9bb6-3643178f82e5.png)   
+이 식은 시간이 지남에 따라 다른 agent들의 정책이 변하는 것으로 인해서 변하게 됩니다.  
+
+그러므로, replay memory를 만드는 시점 tc에서 다음과 같은 정보로 기록합니다.  
+![image](https://user-images.githubusercontent.com/40893452/45858459-7925d000-bd98-11e8-9728-559fedbf6329.png)  
+
+그 후, replay time tr 때는 다음과 같은 "importance weighted loss function"을 최소화 시키는 "off-environment"를 훈련시킵니다.  
+![image](https://user-images.githubusercontent.com/40893452/45858481-a1adca00-bd98-11e8-8717-d1b190448e83.png)
+
+
+
+
+
 
 
 
