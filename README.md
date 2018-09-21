@@ -37,7 +37,7 @@ replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.
 (5) shared reward function : ![image](https://user-images.githubusercontent.com/40893452/45855773-a3719080-bd8c-11e8-9eac-d83cd3125889.png)  
 (6) observation : ![image](https://user-images.githubusercontent.com/40893452/45855789-bbe1ab00-bd8c-11e8-9518-04c95cc4d63c.png) ![image](https://user-images.githubusercontent.com/40893452/45855800-c7cd6d00-bd8c-11e8-99ed-1c20159ff7e7.png)   
 (7) action-observation history : ![image](https://user-images.githubusercontent.com/40893452/45855865-1975f780-bd8d-11e8-8c29-7d716ce79eb5.png)  
-(8) policy : ![image](https://user-images.githubusercontent.com/40893452/45855894-301c4e80-bd8d-11e8-9acd-a220400832e2.png)  
+(8) policy : ![image](https://user-images.githubusercontent.com/40893452/45855963-812c4280-bd8d-11e8-9656-d159750500c4.png)
 
 ## [Methods]
 
