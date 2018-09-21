@@ -27,5 +27,25 @@ replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.
 (3) Tesauro, 2003 "hyper Q-learning" 기법을 적용  
 다른 agent들의 behaviour에서 해당 agent들의 policy를 추론합니다.  
 
-### [Single Agent Reinforcement Learning]
+### [Multi Agent Reinforcement Learning]
+## [Environment]
+이 논문에서는 다음과 같은 Setting을 통해서 multi-agent 환경을 다룹니다.  
+(1) n개의 agents : ![image](https://user-images.githubusercontent.com/40893452/45855672-247c5800-bd8c-11e8-854d-385c0ea1a0e9.png)  
+(2) Stochastic game : ![image](https://user-images.githubusercontent.com/40893452/45855688-352cce00-bd8c-11e8-9f02-568688f71e8a.png)  
+(3) action & joint action : ![image](https://user-images.githubusercontent.com/40893452/45855711-61e0e580-bd8c-11e8-9245-373e49569970.png) & ![image](https://user-images.githubusercontent.com/40893452/45855721-6d341100-bd8c-11e8-9c33-761844a891fb.png)  
+(4) state transition probability : ![image](https://user-images.githubusercontent.com/40893452/45855721-6d341100-bd8c-11e8-9c33-761844a891fb.png) ![image](https://user-images.githubusercontent.com/40893452/45855758-92c11a80-bd8c-11e8-8558-98c4855297c4.png)  
+(5) shared reward function : ![image](https://user-images.githubusercontent.com/40893452/45855773-a3719080-bd8c-11e8-9eac-d83cd3125889.png)  
+(6) observation : ![image](https://user-images.githubusercontent.com/40893452/45855789-bbe1ab00-bd8c-11e8-9518-04c95cc4d63c.png) ![image](https://user-images.githubusercontent.com/40893452/45855800-c7cd6d00-bd8c-11e8-99ed-1c20159ff7e7.png)   
+(7) action-observation history : ![image](https://user-images.githubusercontent.com/40893452/45855865-1975f780-bd8d-11e8-8c29-7d716ce79eb5.png)  
+(8) policy : ![image](https://user-images.githubusercontent.com/40893452/45855894-301c4e80-bd8d-11e8-9acd-a220400832e2.png)  
+
+## [Methods]
+
+
+
+
+
+
+
+
 
