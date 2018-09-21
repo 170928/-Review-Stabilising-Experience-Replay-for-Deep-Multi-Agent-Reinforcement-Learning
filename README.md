@@ -49,7 +49,7 @@ replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.
 ### [Multi-Agent Important Sampling]
 이 논문에서는 multi agent setting을 위해서 "importance sampling"을 이용합니다.  
 
-[Case 1]  
+[Case 1 - full-observable case]
 1. fully-observable multi-agent setting.  
 2. other agent들의 policy를 모두 알 수 있다고 가정하는 경우.  
 
@@ -65,6 +65,34 @@ Bellman optimality equation을 다음과 같이 사용할 수 있습니다.
 
 그 후, replay time tr 때는 다음과 같은 "importance weighted loss function"을 최소화 시키는 "off-environment"를 훈련시킵니다.  
 ![image](https://user-images.githubusercontent.com/40893452/45858481-a1adca00-bd98-11e8-8717-d1b190448e83.png)
+
+그러나, 위의 방법들은 "partially observable" setting에서는 observation & transition function 뿐만 아니라 agent들의 policy에 영향을 받는 복잡한 환경과 밀접하게 연관되는 observation history들에 의해 훨씬 더 복잡해집니다.   
+
+[Case 2 - Partially Observable Case]
+1. augmented state space를 다음과 같이 정의합니다.   
+![image](https://user-images.githubusercontent.com/40893452/45858731-db330500-bd99-11e8-8785-08f1603fc0ce.png)  
+이 state space에는  
+(1) "original state" s   
+(2) other agents의 action-observation history 
+를 포함합니다.  
+
+2. new observation function 은 다음과 같습니다.  
+![image](https://user-images.githubusercontent.com/40893452/45859150-c48dad80-bd9b-11e8-88dd-b5551740b9f1.png)
+
+3. new reward function은 다음과 같이 정의됩니다.  
+![image](https://user-images.githubusercontent.com/40893452/45859165-d0796f80-bd9b-11e8-8de9-8b00ebc3d471.png)
+
+4. new transition function은 다음과 같습니다.  
+![image](https://user-images.githubusercontent.com/40893452/45859177-e4bd6c80-bd9b-11e8-9257-e217e408aad4.png)
+
+위의 새로운 정의들을 기반으로 다음과 같이 Bellman equation이 정의됩니다.  
+![image](https://user-images.githubusercontent.com/40893452/45859210-0880b280-bd9c-11e8-8971-dcc9d3084998.png)
+
+![image](https://user-images.githubusercontent.com/40893452/45859267-54cbf280-bd9c-11e8-9bcd-3b5d32a7807b.png)
+
+위의 Bellman equation을 통해서, partially-observable case에서도 non-stationary term ![image](https://user-images.githubusercontent.com/40893452/45859281-6ca37680-bd9c-11e8-9919-fe146faafa1f.png)에 Bellman equation이 의존한다는 것을 알 수 있습니다.  
+
+## [Multi-Agent Fingerprints]
 
 
 
