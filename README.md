@@ -46,7 +46,8 @@ replay buffer 내의 데이터에서 오래된 데이터를 disable 합니다.
 여전히 생겨나는 문제는, neural network의 "experience buffer"를 사용한 접근법에서 "non-stationary" 문제가 발생합니다.  
 > 이는 agent들이 생성한 replay memory내의 데이터가 생성되었을 때의 "dynamics" 가 current training time의 dynamics와 맞지 않다는 것입니다. 즉, current dynamics를 반영하지 못합니다.   
 > 그래서, replay memory 때문에 발생하는 학습과정에서의 agent의 obsolete 문제를 해결하기 위해, replay memory가 없는 방법을 사용하기도 합니다.  
-### [Multi-agent important sampling]
+### [Multi-Agent Important Sampling]
+이 논문에서는 multi agent setting을 위해서 "importance sampling"을 이용합니다.  
 
 
 
